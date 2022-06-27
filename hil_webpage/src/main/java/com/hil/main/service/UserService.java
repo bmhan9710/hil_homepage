@@ -19,4 +19,8 @@ public class UserService {
 		return userList;
 	}
 	
+	public void addUser(User user) {
+		usermapper.save(user);
+	}
+	
 }

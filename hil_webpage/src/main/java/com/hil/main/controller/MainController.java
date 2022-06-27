@@ -38,20 +38,14 @@ public class MainController {
 		mav.addObject("userList", userList);
 		return mav;
 	}
-	/*
-	@RequestMapping(value="/useradd.do", method=RequestMethod.POST)
-	private ModelAndView msvuseraddpage(
-		@RequestParam(value="name") String name, 
-		@RequestParam(value="part") String part, Model model) {
-		ModelAndView mav = new ModelAndView("userlistview");
-		return mav;
-	}
-	*/
+	
 	@RequestMapping(value="/useradd.do", method=RequestMethod.POST)
 	@ResponseBody
-	private ModelAndView msvuseraddpage(
-		User user, Model model) {
+	private ModelAndView msvuseraddpage(User user, Model model) {
+		userService.addUser(user);
+		List<User> userList = userService.getAllUsers();
 		ModelAndView mav = new ModelAndView("userlistview");
+		mav.addObject("userList", userList);
 		return mav;
 	}
 }

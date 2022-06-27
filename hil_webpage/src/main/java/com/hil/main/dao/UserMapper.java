@@ -15,8 +15,7 @@ public interface UserMapper {
 	@Select("SELECT name, part FROM user_base")
 	List<User> findAll();
 	
-	@Insert("INSERT INTO user(name, part) VALUES(#{name}, #{part}")
-	@Options(useGeneratedKeys=true, keyProperty="userIdx")
-	int save(@Param("user") final User user);
-	
+	@Insert("INSERT INTO user_base(name, part) VALUES(#{name}, #{part})")
+	int save(User user);
+
 }
