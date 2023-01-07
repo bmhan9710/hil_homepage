@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import com.hil.main.model.User;
 
@@ -19,3 +17,16 @@ public interface UserMapper {
 	int save(User user);
 
 }
+
+
+
+
+// CREATE Query //
+/*
+create table user_base (
+usr_no int not null auto_increment,
+name char(100) not null,
+part char(100) null,
+primary key(usr_no)
+);
+*/
