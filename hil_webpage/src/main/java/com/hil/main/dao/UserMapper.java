@@ -21,7 +21,7 @@ public interface UserMapper {
 
 
 
-// CREATE Query //
+// CREATE Query - MYSQL //
 /*
 create table user_base (
 usr_no int not null auto_increment,
@@ -30,3 +30,13 @@ part char(100) null,
 primary key(usr_no)
 );
 */
+
+//CREATE Query - POSTGRESQL //
+/*
+create table user_base (
+usr_no serial primary key,
+name char(100) not null,
+part char(100) null
+);
+*/
+
