@@ -1,44 +1,47 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE>
-<html>
-<head>
 
 <!-- Add JQuery library -->
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
-<!-- <meta charset="EUC-KR"> -->
-<title>HIL</title>
 
-</head>
+<html>
+<title>HIL_member</title>
+
+<header>
+	<jsp:include page="header.jsp" flush="false"/>
+</header>
+	
 <body>
-<script type="text/javascript">
-	$(document).ready(function() {
-	    console.log( "ready!" );
-	});
 	
-	$(document).on("click", "#insertMemberBtn", function(){
-    	console.log( "Click event occurred!" );
-    	
-    	var addHtml="";
-    	addHtml+="<tr>"
-    	       + "<td><input type='hidden' name='userIdx' value=''></td>"
-               + "<td><input name='name' value='' class='form-control'></td>"
-               + "<td><input name='part' value='' class='form-control'></td>"
-    	       + "</tr>";
-    	$("#userListTable").append(addHtml);
-    });
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    console.log( "ready!" );
+		});
+		
+		$(document).on("click", "#insertMemberBtn", function(){
+	    	console.log( "Click event occurred!" );
+	    	
+	    	var addHtml="";
+	    	addHtml+="<tr>"
+	    	       + "<td><input type='hidden' name='userIdx' value=''></td>"
+	               + "<td><input name='name' value='' class='form-control'></td>"
+	               + "<td><input name='part' value='' class='form-control'></td>"
+	    	       + "</tr>";
+	    	$("#userListTable").append(addHtml);
+	    });
+		
+		$(document).on("click", "#saveMemberBtn", function(){
+	    	$("#userTblForm").submit(function() {
+	    		var name = $("#name").val();
+	    		var part = $("#part").val();
+	    		alert("form submitted.");
+	    	});
 	
-	$(document).on("click", "#saveMemberBtn", function(){
-    	$("#userTblForm").submit(function() {
-    		var name = $("#name").val();
-    		var part = $("#part").val();
-    		alert("form submitted.");
-    	});
-
-    });
-
-</script>
+	    });
+	
+	</script>
 
 
 
@@ -78,6 +81,9 @@
 		</div>
 	</form>
 
-</body>
+	<footer>
+		<jsp:include page="footer.jsp" flush="false"/>
+	</footer>
 
+</body>
 </html>
