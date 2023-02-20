@@ -25,8 +25,10 @@ public interface UserMapper {
 /*
 create table user_base (
 usr_no int not null auto_increment,
-name char(100) not null,
-part char(100) null,
+name varchar(100) not null,
+part varchar(100) null,
+login_id varchar(100) not null,
+password varchar(100) null,
 primary key(usr_no)
 );
 */

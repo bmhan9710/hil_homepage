@@ -8,12 +8,12 @@
 
 <html>
 <title>HIL_member</title>
+<body>
 
 <header>
 	<jsp:include page="header.jsp" flush="false"/>
 </header>
-	
-<body>
+
 	
 	<script type="text/javascript">
 		$(document).ready(function() {
